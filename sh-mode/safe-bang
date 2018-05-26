@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: safe-bang
+# key: !
+# --
+#!/usr/bin/env bash
+
+set -euo pipefail
+[[ "$\{TRACE:-\}" ]] && set -x
+
+
+main() {
+    $0
+}
+
+main "$@"
